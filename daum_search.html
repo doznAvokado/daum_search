@@ -24,7 +24,7 @@
       daum.postcode.load(function() {
           new daum.Postcode({
             oncomplete: function(data) {
-              window.flutter_inappwebview.callHandler('onSelectAddress', data);
+              // window.flutter_inappwebview.callHandler('onSelectAddress', data);
 
               try{ testChannel.postMessage(data);} catch(err){testChannel.postMessage('error')}
               
