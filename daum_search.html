@@ -27,7 +27,7 @@
               // window.flutter_inappwebview.callHandler('onSelectAddress', data);
 
               console.log(data);
-              console.log(Json.stringify(data));
+              console.log(JSON.stringify(data));
               try{ window.testChannel.postMessage(data);} catch(err){window.testChannel.postMessage("error");}
               
             },
