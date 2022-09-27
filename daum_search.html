@@ -26,7 +26,7 @@
             oncomplete: function(data) {
               // window.flutter_inappwebview.callHandler('onSelectAddress', data);
 
-//               try{ window.testChannel.postMessage(data);} catch(err){window.testChannel.postMessage("error")}
+              window.alret(data);
               try{ window.testChannel.postMessage(data);} catch(err){window.testChannel.postMessage("error")}
               
             },
