@@ -28,7 +28,7 @@
 
               console.log(data);
               console.log(JSON.stringify(data));
-              try{ window.testChannel.postMessage(data);} catch(err){window.testChannel.postMessage("error");}
+              try{ window.testChannel.postMessage(JSON.stringify(data));} catch(err){window.testChannel.postMessage("error");}
               
             },
             width : '100%',
