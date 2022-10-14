@@ -24,12 +24,18 @@
       daum.postcode.load(function() {
           new daum.Postcode({
             oncomplete: function(data) {
-              // window.flutter_inappwebview.callHandler('onSelectAddress', data);
-
-              console.log(data);
-              console.log(JSON.stringify(data));
-              try{ window.testChannel.postMessage(JSON.stringify(data));} catch(err){window.testChannel.postMessage("error");}
-              
+              try{ 
+                window.completeChannel.postMessage(JSON.stringify(data));
+              } catch(err){
+                window.completeChannel.postMessage("error");
+              }
+            },
+            onsearch: function(data){
+              try{ 
+                window.searchChannel.postMessage(data);
+              } catch(err){
+                window.searchChannel.postMessage("error");
+              }
             },
             width : '100%',
             height : '100%',
