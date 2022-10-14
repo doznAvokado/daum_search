@@ -27,14 +27,14 @@
               try{ 
                 window.completeChannel.postMessage(JSON.stringify(data));
               } catch(err){
-                window.completeChannel.postMessage("error");
+                window.completeChannel.postMessage("completeChannelError");
               }
             },
             onsearch: function(data){
               try{ 
-                window.searchChannel.postMessage(data);
+                window.searchChannel.postMessage(JSON.stringify(data));
               } catch(err){
-                window.searchChannel.postMessage("error");
+                window.searchChannel.postMessage("searchChannelError");
               }
             },
             width : '100%',
